@@ -48,3 +48,5 @@ nota_1 = 3
 nota_2 = 5
 nota_media = (nota_1 + nota_2) / 2
 print(nota_media)
+
+# para hacer otras operaciones saliendo de la aritmetica basica, se podria utilizar la libreria math, para uso de pi, funciones, raiz entre otras cosa importantes
