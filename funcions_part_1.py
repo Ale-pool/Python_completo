@@ -94,7 +94,7 @@
 
 # Docstring de funciones (documentación interna de la función)
 
-def factorial(n: int) -> int:
+def factorial(n: int) -> int:  # -> int la funcion esta diseñada para recibir un entero
     """
     Calcula el factorial de un número entero no negativo n.
 
@@ -119,3 +119,72 @@ def factorial(n: int) -> int:
 print(factorial(7))
 help(factorial)
 
+
+# Ámbito (scope) y variables locales vs globales
+#Variables definidas en función → locales.
+#Variables fuera → globales (evitar su uso excesivo).
+
+x = 10 # global
+
+def prueba():
+    x = 5 # local
+    print(x)
+    
+#prueba()
+#print(x)
+
+# Closures (funciones que recuerdan su entorno)
+#Una función que devuelve otra y la interna «recuerda» variables.
+
+
+def multiplicador(factor):
+    def multiplicar(n):
+        return n * factor
+    return multiplicar
+
+doble = multiplicador(4)
+print(doble(5))
+
+# Funciones de orden superior (recibir o devolver funciones)
+def aplicar(f, lista):
+    return [f(x) for x in lista]
+
+print(aplicar(lambda x: x*2, [1,2,3]))  # [2,4,6]
+
+
+
+def super_funion(*args, **kwargs):
+    t = 0
+    for a in args:
+        t+= a
+    print("Sumatorio indeterminado", t)
+    for k in kwargs:
+        print(k, " ", kwargs[k])
+        
+super_funion(12.23,33.24,45.24, nombre = "Alex", edad = 24)
+
+def cuenta_atras(num):
+    num -=1
+    if num > 0:
+        print(num)
+        #cuenta_atras(num)
+    else:
+        print("bommm!")
+
+cuenta_atras(10)
+
+
+def factorial(num):
+    if num > 1:
+        num = num * factorial(num -1)
+    return num
+    
+factorial(7)
+
+def suma(n):
+    if  n > 1:
+        n = n + suma(n-1)
+    return n
+
+
+suma(3)
