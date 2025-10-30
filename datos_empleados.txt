@@ -1,0 +1,6 @@
+ID,Nombre,Edad,Ciudad,Salario
+1,Alex,24,Medellin,3500
+2,Maria,30,Bogota,4200
+3,Jose,28,Cali,3900
+4,Laura,25,Cartagena,4100
+5,Camilo,35,Barranquilla,5000
